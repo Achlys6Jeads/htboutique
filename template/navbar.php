@@ -4,10 +4,10 @@
       </button>
       <div class="collapse navbar-collapse text-center justify-content-center" id="navbar3">
         <ul class="navbar-nav">
-          <li class="nav-item mx-2"> <a class="nav-link" href="">Accueil</a> </li>
+          <li class="nav-item mx-2"> <a class="nav-link" href="/">Accueil</a> </li>
           <li class="nav-item mx-2"> <a class="nav-link navbar-brand mr-0 text-primary" href="#">
               <b> Montre2Luxe</b></a> </li>
-          <li class="nav-item mx-2"> <a class="nav-link" href="/pannier.php">Pannier (0)</a> </li>
+          <li class="nav-item mx-2"> <a class="nav-link" href="pannier.php">Pannier (0)</a> </li>
         </ul>
       </div>
     </div>

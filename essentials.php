@@ -44,3 +44,18 @@ function displayArticle(){
 
     return $template;
 }
+
+function displayPannier(){
+    
+    if(isset($_SESSION['pannier'])){
+        $pannier = $_SESSION['pannier'];
+    } else {
+        $pannier = [];
+    }
+    
+    ob_start();
+        include('template/articles.php');
+        $template = ob_get_clean();
+
+    return $template;
+}
