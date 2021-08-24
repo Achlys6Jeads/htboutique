@@ -1,42 +1,55 @@
 <?php
 session_start();
+Init();
 
-ob_start();
+    ob_start();
     include('template/navbar.php');
     $template['navbar'] = ob_get_clean();
 
-ob_start();
+    ob_start();
     include('template/footer.php');
     $template['footer'] = ob_get_clean();
 
-function displayArticle(){
-    $articles = [
+    ob_start();
+    include('template/pannier.php');
+    $template['pannier'] = ob_get_clean();
+function ProductList(){
+    $produits = [
         0 => [
             'title'=>'Rolex Or',
             'desc'=>'Commencez à tenir',
             'price'=>12,
+            'count'=>1,
         ],
         1 => [
-            'title'=>'Rolex Or',
+            'title'=>'Montre casio',
             'desc'=>'Commencez à tenir',
             'price'=>12,
+            'count'=>1,
         ],
         2 => [
-            'title'=>'Rolex Or',
+            'title'=>'Supreme XXL',
             'desc'=>'Commencez à tenir',
             'price'=>12,
+            'count'=>1,
         ],
         3 => [
-            'title'=>'Rolex Or',
+            'title'=>'Montre Addidas',
             'desc'=>'Commencez à tenir',
             'price'=>12,
+            'count'=>1,
         ],
         4 => [
             'title'=>'Rolex Or',
             'desc'=>'Commencez à tenir',
             'price'=>12,
+            'count'=>1,
         ],
     ];
+    return $produits;
+}
+function displayArticle(){
+    $articles = ProductList();
 
     ob_start();
         include('template/articles.php');
@@ -52,10 +65,15 @@ function displayPannier(){
     } else {
         $pannier = [];
     }
-    
+
     ob_start();
         include('template/articles.php');
         $template = ob_get_clean();
 
     return $template;
+}
+function Init(){
+    if(!isset($_SESSION['pannier'])){
+        $_SESSION['pannier'] = [];
+    } 
 }

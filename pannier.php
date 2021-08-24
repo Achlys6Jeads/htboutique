@@ -10,12 +10,24 @@ include('essentials.php');
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
         type="text/css">
     <link rel="stylesheet" href="theme.css" type="text/css">
+    <script type="text/javascript" src="index.js" ></script>
 </head>
 
 <body>
     <?= @$template['navbar'] ?>
-    <?= displayPannier(); ?>
+    <?= @$template['pannier'] ?>
     <?= @$template['footer'] ?>
+
+    <div class="py-5 text-center">
+    <div class="container">
+      <div class="row">
+        <div class="bg-white p-5 mx-auto col-md-8 col-10">
+          <h3 class="display-3">Payement</h3>
+          <p class="mb-3 lead">Cout total : <span id="pannierCountFinal">Chargement</span>.</p>
+          <p class="mb-4">Which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents.</p> <a class="btn btn-outline-primary" href="#">Payer</a> </div>
+      </div>
+    </div>
+  </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
