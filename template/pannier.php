@@ -2,26 +2,40 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <ul class="list-group">
-                    <?php
-                        foreach($_SESSION['pannier'] as $key => $value):
-                    ?>
-                    <li id="ItemId<?= $key ?>" onclick="RemoveFromBasket('<?= $key ?>')" class="list-group-item Product d-flex justify-content-between align-items-center"> <?= $value['title'] ?><span
-                            class="badge badge-primary badge-pill"><?= $value['count'] ?>)<?= $value['price']*@$value['count'] ?>€</span> </li>
-                    <?php
-                        endforeach;
-                    ?>
+                <ul class="list-group" id="dPannier" >
+  
 
-                    <?php
-                        if($_SESSION['pannier'] == []){
-                    ?>
-                    <li class="list-group-item d-flex justify-content-between align-items-center"> Cras justo odio <span
-                            class="badge badge-primary badge-pill">Votre pannier est vide</span> </li>
-                    <?php
-                        }
-                    ?>
+               
+
+                
                 </ul>
             </div>
         </div>
     </div>
 </div>
+<script>
+    function load(target, url) {
+    var r = new XMLHttpRequest();
+    r.open("GET", url, true);
+    r.onreadystatechange = function () {
+        if (r.readyState != 4 || r.status != 200) return;
+        if(target == "none"){
+
+        } else {
+            target.innerHTML =  r.responseText;
+        }
+    };
+    r.send();
+}
+   function LoadPannier(){
+    load(document.getElementById('dPannier'), 'data.php?display=PannierJson');
+   };
+        
+   function ChangeCountPannier(id){
+    var count = document.getElementById('upd'+id).value;
+    load('none', 'data.php?display=AddBasket&id=' + id + '&count=' + count);
+    LoadPannier();
+    UpdatePannierCount();
+    }
+   LoadPannier();
+</script>

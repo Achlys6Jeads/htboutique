@@ -10,21 +10,29 @@ include('essentials.php');
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
         type="text/css">
     <link rel="stylesheet" href="theme.css" type="text/css">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="index.js"></script>
+    <script type="text/javascript" src="index.js" ></script>
 </head>
 
 <body>
-    <?php
-    if(isset($_GET['remove'])){
-        session_destroy();
-        header('location: index.php');
-    }
-    ?>
     <?= @$template['navbar'] ?>
-    <?= displayArticle(); ?>
+    <?php
+    session_destroy();
+    ?>
+    <div class="py-5 text-center">
+        <div class="container">
+        <div class="row">
+            <div class="bg-white p-5 mx-auto col-md-8 col-10">
+            <h3 class="display-3">Payement</h3>
+            <p class="mb-3 lead">C'est bon c'est encaissé</p>
+            <a class="btn btn-outline-primary" href="index.php">Retour</a> </div>
+        </div>
+        </div>
+    </div>
+
     <?= @$template['footer'] ?>
+
+
+
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">

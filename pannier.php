@@ -16,18 +16,22 @@ include('essentials.php');
 <body>
     <?= @$template['navbar'] ?>
     <?= @$template['pannier'] ?>
-    <?= @$template['footer'] ?>
-
     <div class="py-5 text-center">
     <div class="container">
       <div class="row">
         <div class="bg-white p-5 mx-auto col-md-8 col-10">
           <h3 class="display-3">Payement</h3>
           <p class="mb-3 lead">Cout total : <span id="pannierCountFinal">Chargement</span>.</p>
-          <p class="mb-4">Which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents.</p> <a class="btn btn-outline-primary" href="#">Payer</a> </div>
+          <a class="btn btn-outline-danger" href="index.php?remove=true">Vider mon pannier</a>
+          <a class="btn btn-outline-success" href="recap.php">Payer</a>
       </div>
     </div>
   </div>
+
+    <?= @$template['footer'] ?>
+
+
+
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">

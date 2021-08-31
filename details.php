@@ -10,21 +10,14 @@ include('essentials.php');
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
         type="text/css">
     <link rel="stylesheet" href="theme.css" type="text/css">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="index.js"></script>
+    <script type="text/javascript" src="index.js" ></script>
 </head>
 
 <body>
-    <?php
-    if(isset($_GET['remove'])){
-        session_destroy();
-        header('location: index.php');
-    }
-    ?>
     <?= @$template['navbar'] ?>
-    <?= displayArticle(); ?>
+    <?= @$template['details'] ?>
     <?= @$template['footer'] ?>
+
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
